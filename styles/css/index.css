@@ -32,7 +32,6 @@ body {
   -ms-flex-line-pack: center;
       align-content: center;
   position: relative;
-  overflow: hidden;
 }
 
 body::before {
