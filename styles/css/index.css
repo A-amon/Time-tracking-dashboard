@@ -267,18 +267,18 @@ button {
         -ms-flex-align: start;
             align-items: flex-start;
   }
-}
-
-@media screen and (min-width: 1020px) {
-  .status-card {
-    min-width: 250px;
-  }
   .status-card__this-week .status-card__duration {
     font-size: 3rem;
   }
   .status-card__last-week {
     margin-top: 0.5rem;
     margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .status-card {
+    min-width: 250px;
   }
 }
 

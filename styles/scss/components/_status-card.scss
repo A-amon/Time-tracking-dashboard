@@ -124,10 +124,6 @@
 			flex-direction: column;
 			align-items: flex-start;
 		}
-	}
-
-	@include laptop-query{
-		min-width: $card-width;
 
 		&__this-week &__duration{
 			font-size: $fs-xl;
@@ -137,6 +133,10 @@
 			margin-top:0.5rem;
 			margin-left: 0;
 		}
+	}
+
+	@include laptop-query{
+		min-width: $card-width;
 	}
 }
 
