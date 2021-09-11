@@ -1,0 +1,16 @@
+@import 'header-top';
+@import 'header-tabs';
+
+.header{
+	box-shadow: $card-box-shadow;
+	border-radius: $card-border-radius;
+	align-self: flex-start;
+	&__top{
+		position: relative;
+		z-index: 1;
+	}
+	
+	&__tabs{
+		margin-top:-2rem;
+	}
+}

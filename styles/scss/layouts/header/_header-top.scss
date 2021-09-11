@@ -1,0 +1,61 @@
+
+.header{
+	&__top{
+		background-color: $c-blue;
+		display:flex;
+		align-items:center;
+		height: 150px;
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__image{
+		height:5rem;
+		width: 5rem;
+		border-radius:50%;
+		border:3px solid $c-white;
+
+		img{
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__title{
+		font-size: $fs-normal;
+		font-weight: $fw-regular;
+		margin-left: 1rem;
+		color:$c-soft-blue;
+		em{
+			display: block;
+			font-style: normal;
+			font-weight: $fw-light;
+			font-size: $fs-large;
+			color:$c-white;
+			margin-top: 0.5rem;
+		}
+	}
+
+	@include tablet-query{
+		&__top{
+			flex-direction: column;
+			align-items: flex-start;
+			min-height: 350px;
+			height: fit-content;
+		}
+
+		&__image{
+			margin-bottom: 2rem;
+		}
+
+		&__title{
+			margin-left: 0;
+
+			em{
+				font-size: $fs-xl - 0.5rem;
+			}
+		}
+	}
+}

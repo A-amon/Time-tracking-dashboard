@@ -1,0 +1,71 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: $ff-rubik;
+	background-color: $c-very-dark-blue;
+	padding:2rem 0;
+	min-height: 100vh;
+	display: flex;
+	align-content: center;
+	position: relative;
+	overflow: hidden;
+
+	&::before{
+		content:'';
+		height:100px;
+		width: 100px;
+		display: block;
+		border-radius: 50%;
+		background-color: rgba($c-soft-blue, 0.1);
+		position: absolute;
+		top:-50px;
+		left:-50px;
+		animation:circleScale 1s 1 forwards;
+	}
+	
+	@keyframes circleScale{
+		0%{
+			opacity:0;
+			transform:translate(0,0) scale(1);
+		}
+		50%{
+			opacity:1;
+			transform:translate(50%,50%) scale(20);
+		}
+		100%{
+			opacity:0;
+			transform:translate(0,0) scale(1);
+		}
+	}
+
+	.container{
+		display: grid;
+		grid-template-columns: 100%;
+		justify-items: center;
+
+		@include tablet-query{
+			grid-template-columns:$card-width 1fr;
+			gap:2rem;
+		}
+	}
+}
+
+header, main{
+	width: 100%;
+}
+
+button{
+	font-family: inherit;
+	cursor: pointer;
+}
+
+.sr-only{
+	height:0;
+	width:0;
+	display: block;
+	overflow: hidden;
+}

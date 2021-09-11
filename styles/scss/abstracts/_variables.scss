@@ -1,0 +1,48 @@
+
+/******************
+* COLOR
+*******************/
+$c-black:hsl(0,0%,0%);
+$c-white:hsl(0,0%,100%);
+$c-blue:hsl(246,80%,60%);
+$c-light-red:hsl(15,100%,70%);
+$c-soft-blue:hsl(195,74%,62%);
+$c-light-red2:hsl(348, 100%,68%);
+$c-lime-green:hsl(145,58%,55%);
+$c-violet:hsl(264,64%,52%);
+$c-soft-orange:hsl(43,84%,65%);
+
+$c-very-dark-blue:hsl(226,43%,10%);
+$c-dark-blue:hsl(235,46%,20%);
+$c-desaturated-blue:hsl(235,45%,61%);
+$c-pale-blue:hsl(236,100%,87%);
+
+$c-minsk:hsl(236, 41%, 34%);
+
+/******************
+* TYPOGRAPHY
+*******************/
+$ff-rubik:'Rubik', sans-serif;
+
+$fw-light:300;
+$fw-regular:400;
+$fw-medium:500;
+
+$fs-normal:1rem;
+$fs-medium:1.2rem;
+$fs-large:1.8rem;
+$fs-xl:3rem;
+
+/******************
+* DEVICE SIZE
+*******************/
+$d-tablet:768px;
+$d-laptop:1020px;
+$d-laptop-l:1440px;
+
+/******************
+* CARD
+*******************/
+$card-width:250px;
+$card-box-shadow:0 5px 10px rgba($c-black, 0.5);
+$card-border-radius:10px;

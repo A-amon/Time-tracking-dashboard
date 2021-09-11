@@ -1,0 +1,21 @@
+
+/******************
+* MEDIA QUERIES
+*******************/
+@mixin tablet-query{
+	@media screen and (min-width:$d-tablet) {
+		@content;
+	}
+}
+
+@mixin laptop-query{
+	@media screen and (min-width:$d-laptop) {
+		@content;
+	}
+}
+
+@mixin laptop-l-query{
+	@media screen and (min-width:$d-laptop-l) {
+		@content;
+	}
+}
