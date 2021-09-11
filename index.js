@@ -278,5 +278,6 @@ const navigateTabsByArrow = (direction) => {
 
 setupStaggerAnim('.status-card')
 getData()
+statusSection.addEventListener('keydown', handlePanelKeydown)	// Hacky way to add focus trap to first panel
 addListenerToTabs()
 addKeyListenerToBody()
