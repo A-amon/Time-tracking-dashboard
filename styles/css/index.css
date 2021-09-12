@@ -21,6 +21,20 @@
           box-sizing: border-box;
 }
 
+/*
+* Hide horizontal overflow for mobile
+* Overflow caused by animation
+*/
+html, body {
+  overflow-x: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  html, body {
+    overflow-x: initial;
+  }
+}
+
 body {
   font-family: "Rubik", sans-serif;
   background-color: #0f1424;
@@ -56,8 +70,8 @@ body::before {
   }
   50% {
     opacity: 1;
-    -webkit-transform: translate(50%, 50%) scale(20);
-            transform: translate(50%, 50%) scale(20);
+    -webkit-transform: translate(50%, 50%) scale(15);
+            transform: translate(50%, 50%) scale(15);
   }
   100% {
     opacity: 0;
@@ -74,8 +88,8 @@ body::before {
   }
   50% {
     opacity: 1;
-    -webkit-transform: translate(50%, 50%) scale(20);
-            transform: translate(50%, 50%) scale(20);
+    -webkit-transform: translate(50%, 50%) scale(15);
+            transform: translate(50%, 50%) scale(15);
   }
   100% {
     opacity: 0;
