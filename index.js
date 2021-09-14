@@ -166,12 +166,28 @@ const switchTab = (selected) => {
  * @param  {string} timeframe
  */
 const switchTabPanel = (timeframe) => {
+	/**
+	 * Update screen reader only .status__title
+	 */
+	const statusTitle = statusSection.querySelector('.status__title')
+	statusTitle.textContent = `${capitalizeText(timeframe)} status`
+
 	statusSection.setAttribute('data-timeframe', timeframe)
 	statusSection.focus()
 	statusSection.removeEventListener('keydown', handlePanelKeydown)	// Remove previously assigned listener
 	statusSection.addEventListener('keydown', handlePanelKeydown)
 
 	getData(true)
+}
+
+/**
+ * Capitalize first letter of text
+ * @param  {string} text
+ * @returns {string}
+ */
+const capitalizeText = (text) => {
+	const textLen = text.length
+	return text[0].toUpperCase() + text.slice(1, textLen)
 }
 
 /**
