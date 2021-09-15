@@ -78,8 +78,9 @@ const fillStatusCards = (items) => {
 	statusCards.forEach(statusCard => {
 		const title = statusCard.querySelector('.status-card__title').textContent.trim()
 		const { current, previous } = getStatusData(items, title, timeframe)
+		const unit = getUnitFromTimeframe(timeframe)
 
-		fillStatusCard(statusCard, current, previous)
+		fillStatusCard(statusCard, current, previous, unit)
 	})
 }
 
@@ -89,19 +90,52 @@ const fillStatusCards = (items) => {
  * @param  {number} current
  * @param  {number} previous
  */
-const fillStatusCard = (statusCard, current, previous) => {
-	const thisWeekEl = statusCard.querySelector('.status-card__this-week')
-	const thisWeekDuration = thisWeekEl.querySelector('.status-card__duration-value')
-	const thisWeekLabel = thisWeekEl.querySelector('.status-card__duration-label')
+const fillStatusCard = (statusCard, current, previous, unit) => {
+	const thisLabel = statusCard.querySelector('.status-card__label-this')
+	const lastLabel = statusCard.querySelector('.status-card__label-last')
 
-	const lastWeekEl = statusCard.querySelector('.status-card__last-week')
-	const lastWeekDuration = lastWeekEl.querySelector('.status-card__duration-value')
-	const lastWeekLabel = lastWeekEl.querySelector('.status-card__duration-label')
+	const thisEl = statusCard.querySelector('.status-card__this-week')
+	const thisDuration = thisEl.querySelector('.status-card__duration-value')
+	const thisDurationLabel = thisEl.querySelector('.status-card__duration-label')
 
-	thisWeekDuration.textContent = current
-	thisWeekLabel.textContent = current > 1 ? 'hrs' : 'hr'
-	lastWeekDuration.textContent = previous
-	lastWeekLabel.textContent = previous > 1 ? 'hrs' : 'hr'
+	const lastEl = statusCard.querySelector('.status-card__last-week')
+	const lastDuration = lastEl.querySelector('.status-card__duration-value')
+	const lastDurationLabel = lastEl.querySelector('.status-card__duration-label')
+
+	thisLabel.textContent = unit === 'Day' ? 'Today' : `This ${unit}`
+	lastLabel.textContent = unit === 'Day' ? 'Yesterday' : `Last ${unit}`
+
+	thisDuration.textContent = current
+	thisDurationLabel.textContent = current > 1 ? 'hrs' : 'hr'
+	lastDuration.textContent = previous
+	lastDurationLabel.textContent = previous > 1 ? 'hrs' : 'hr'
+}
+
+/**
+ * Get unit of time
+ * Based on timeframe - daily, weekly, monthly
+ * > Returns Day/Week/Month
+ * @param {string} timeframe 
+ * @returns {string}
+ */
+const getUnitFromTimeframe = (timeframe) => {
+	let unit
+
+	switch (timeframe) {
+		case 'daily':
+			unit = 'day'
+			break
+		case 'weekly':
+			unit = 'week'
+			break
+		case 'monthly':
+			unit = 'month'
+			break
+		default:
+			break
+	}
+
+	return capitalizeText(unit)
 }
 
 /**
